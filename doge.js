@@ -44,11 +44,13 @@ const fadeIn = (element, duration) => {
 
 function muchDoge() {
     suchDoge()
-    var elem = document.getElementById("doge");   
+    var elem = document.getElementById("doge"); 
+    elem.style.position = 'absolute';  
     var id = setInterval(frame, 1500);
   function frame() {
       document.getElementById('doge').innerHTML = dogeArray[Math.floor(Math.random() * dogeArray.length)] 
       fadeIn(elem, 500);
+
       elem.style.color = colorArray[Math.floor(Math.random()* colorArray.length)];
       elem.style.top = rando(0 , windowHeight()); + "px"; 
       elem.style.left = rando(0, windowWidth()) + "px";
