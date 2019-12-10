@@ -13,7 +13,6 @@ function windowWidth(){
     return window.innerWidth
 }
 
-console.log(dogeArray.length)
 
 function suchDoge(){
 document.body.innerHTML = '<span id="doge"></span>';
@@ -30,12 +29,26 @@ var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
           '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
           '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
+
+const fadeIn = (element, duration) => {
+    (function increment(value = 0) {
+        element.style.opacity = String(value);
+        if (element.style.opacity !== '1') {
+            setTimeout(() => {
+                increment(value + 0.1);
+            }, duration / 10);
+        }
+    })();
+};
+
+
 function muchDoge() {
     suchDoge()
-  var elem = document.getElementById("doge");   
-  var id = setInterval(frame, 1500);
+    var elem = document.getElementById("doge");   
+    var id = setInterval(frame, 1500);
   function frame() {
       document.getElementById('doge').innerHTML = dogeArray[Math.floor(Math.random() * dogeArray.length)] 
+      fadeIn(elem, 500);
       elem.style.color = colorArray[Math.floor(Math.random()* colorArray.length)];
       elem.style.top = rando(0 , windowHeight()); + "px"; 
       elem.style.left = rando(0, windowWidth()) + "px";
