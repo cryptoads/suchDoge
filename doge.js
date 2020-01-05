@@ -15,7 +15,7 @@ function windowWidth(){
 
 
 function suchDoge(){
-document.body.innerHTML = '<span id="doge"></span>';
+document.body.innerHTML += '<span id="doge"></span>';
 }
 
 var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
